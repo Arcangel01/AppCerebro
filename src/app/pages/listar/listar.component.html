@@ -1,0 +1,36 @@
+<div class="container table-responsive-sm table-wrapper-scroll-y my-custom-scrollbar" *ngIf="lista" >
+    <table
+     class="table table-bordered table-striped table-sm mb-0 table-dark container p-4">
+        <thead>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Tiempo Invertido</th>
+            <th>Fecha</th>
+            <th>Descripcion</th>
+            <th>Nombres</th>
+            <th>Accion</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of lista" >
+                <td>{{data.hora_inicio}}</td>
+                <td>{{data.hora_fin}}</td>
+                <td>{{data.t_invertido}}</td>
+                <td>{{data.fecha}}</td>
+                <td>{{data.descripcion}}</td>
+                <td>{{data.nombres }}</td>
+                <td>
+                    <button (click)="Editar(data)" class="btn btn-info">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container" *ngIf="!lista" >
+    <div class="form-group">
+        <h1 class="display-4">Ups parece que no hay registros!</h1>
+        <img src="../../../assets/construccion.jpeg" width="70%" height="380px" alt="">
+    </div>
+</div>
+
+
+
